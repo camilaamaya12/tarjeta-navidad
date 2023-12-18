@@ -1,0 +1,91 @@
+/* Estilos para la tarjeta */
+body {
+  background-image: url(navidad.jpg);
+  
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+.card {
+  width: 500px;
+  height: 600px;
+  background-image: url(familia.jpeg);
+  background-size: 600px;
+  background-position-y: center;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+/* Estilos para el texto de neón */
+.neon-text {
+  font-size: 50px;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #40ec5d, 0 0 30px #2471e4, 0 0 40px #d3f127, 0 0 70px #f532d4, 0 0 80px #ff0000, 0 0 100px #ff0000;
+  animation: flicker 1s infinite alternate;
+}
+.red {
+  color: #d9ff00 ;
+}
+
+/
+
+
+
+/* Estilos para las luces */
+.luz {
+  display: block;
+  position: absolute;
+  left: 30%;
+  width: 5px;
+  height: 5px;
+  bottom: 40px;
+  border-radius: 50%;
+  animation: parpadeo 1s infinite;
+}
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Estilos para los copos de nieve */
+.snowflakes {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+.snowflake {
+  border-radius: 50%;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  pointer-events: none;
+  user-select: none;
+  animation: snowfall linear infinite;
+}
+@keyframes snowfall {
+  0% { transform: translateY(-100vh); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Animación para el texto de neón */
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 70px #ff0000, 0 0 80px #ff0000, 0 0 100px #ff0000;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    text-shadow: none;
+  }
+}
